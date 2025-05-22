@@ -25,6 +25,17 @@ function Garage() {
         country : "Switzerland"
     }
 
+    // creating list
+    const carList = [
+        {brand : "BMW", color : "Red"},
+        {brand : "Ford", color : "Green"},
+        {brand : "Tesla", color : "Black"},
+    ];
+
+    const numberList = [
+        1,2,3,4,5,6,7,8,9
+    ]
+        
     return (
         <div>
         <h1>
@@ -41,6 +52,13 @@ function Garage() {
         {/* Ternory conditional operator rendering example */}
         {isDoorOpen ?
         <h1>Garage door is open</h1> : <h1>garage door is closed</h1> }
+        <ul>
+            {carList.map((carinfo) => {return <li key={carinfo.brand}> <Car carInfo={carinfo}/> </li>})}
+        </ul>
+
+        <ul>
+            {numberList.map((num, index) => {return <p key={index}>{num}</p>})}
+        </ul>
         </div>
     )
 };
